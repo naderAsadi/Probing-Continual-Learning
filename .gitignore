@@ -1,0 +1,9 @@
+**/__pycache__
+**/.vscode
+**/wandb
+**/outputs
+**/snapshots
+**/*.png
+**/sweeps/scripts/
+
+*.ipynb

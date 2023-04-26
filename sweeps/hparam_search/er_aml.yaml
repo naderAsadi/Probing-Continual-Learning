@@ -1,0 +1,88 @@
+name: 'class_inc2'
+project: 'SCRD'
+method: grid
+metric:
+  goal: maximize
+  name: valid/avg_acc
+program: main.py
+
+parameters:
+  dataset:
+    values: ["miniimagenet"]
+  n_tasks:
+    values: [20]
+  n_epochs:
+    values: [80]
+  n_warmup_epochs:
+    values: [60]
+  batch_size:
+    values: [128]
+  buffer_batch_size:
+    values: [128, 64]
+  lr:
+    values: [0.01, 0.005]
+  run:
+    values: [0, 1]
+
+  # Method specific hparams
+  mem_size:
+    values: [5, 20, 50]
+  supcon_temperature:
+    values: [0.1, 0.2, 0.3]
+
+  # Setting
+  method:
+    value: "er_aml"
+  unsupervised:
+    value: 0
+  use_augs:
+    value: 1
+  cuda_id:
+    value: 0
+  save_snapshot:
+    value: 0
+  use_snapshots:
+    value: 0
+  eval_n_epochs:
+    value: 40
+  num_workers:
+    value: 8
+  data_root:
+    value: $SLURM_TMPDIR/cl-datasets/
+  snapshot_path:
+    value: $HOME/codes/lifelong-ssl/snapshots/
+
+  model:
+    value: "resnet18"
+  nf:
+    value: 64
+  projection_size:
+    value: 128
+  projection_hidden_size:
+    value: 512
+  
+  # Eval Settigns
+  task_incremental:
+    value: 0
+  keep_training_data:
+    value: 0
+  multilinear_eval:
+    value: 0
+  singlelinear_eval:
+    value: 1
+  cka_eval:
+    value: 0
+  half_iid:
+    value: 0
+  
+  # Defaults
+  download:
+    value: 1
+  task_free: 
+    value: 0
+  wandb:
+    value: 1
+  wandb_mode:
+    value: "offline"
+  exp_name:
+    value: "class_inc2"
