@@ -4,8 +4,14 @@ You can find the pre-release code for [PRD](https://proceedings.mlr.press/v202/a
 
 To reproduce the results in Figure 2 of the paper, you can run the following command:
 
+Split-CIFAR100
 ```
-python main.py --method=repe --use_augs=1 --data_root="path/to/data" --model=resnet18 --nf=64 --projection_size=128 --projection_hidden_size=512 --task_incremental=1 --keep_training_data=0 --multilinear_eval=0 --singlelinear_eval=1 --dataset=cifar100 --n_tasks=20 --n_epochs=100 --n_warmup_epochs=120 --batch_size=128 --lr=0.01 --supcon_temperature=0.1 --distill_coef=4.0 --prototypes_coef=2.0 --prototypes_lr=0.01 --distill_temp=1
+python main.py --method=repe --dataset=cifar100 --data_root="path/to/data" --model=resnet18 --nf=64 --use_augs=1 --projection_size=128 --projection_hidden_size=512 --task_incremental=1 --keep_training_data=0 --multilinear_eval=0 --singlelinear_eval=1 --n_tasks=20 --n_epochs=100 --n_warmup_epochs=120 --batch_size=128 --lr=0.01 --supcon_temperature=0.1 --distill_coef=4.0 --prototypes_coef=2.0 --prototypes_lr=0.01 --distill_temp=1
+```
+
+Split-MiniImageNet
+```
+python main.py --method=repe --dataset=miniimagenet --data_root="path/to/data" --model=resnet18 --nf=64 --use_augs=1 --projection_size=128 --projection_hidden_size=512 --task_incremental=1 --keep_training_data=0 --multilinear_eval=0 --singlelinear_eval=1 --n_tasks=20 --n_epochs=100 --n_warmup_epochs=120 --batch_size=128 --lr=0.01 --supcon_temperature=0.1 --distill_coef=4.0 --prototypes_coef=2.0 --prototypes_lr=0.01 --distill_temp=1
 ```
 
 ---
