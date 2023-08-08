@@ -12,6 +12,7 @@ python main.py --method=repe --use_augs=1 --data_root="path/to/data" --model=res
 
 # Probing Forgetting in Supervised and Unsupervised Continual Learning
 
+This repository holds the experimental code for [Probing Representation Forgetting in Supervised and Unsupervised Continual Learning](https://openaccess.thecvf.com/content/CVPR2022/papers/Davari_Probing_Representation_Forgetting_in_Supervised_and_Unsupervised_Continual_Learning_CVPR_2022_paper.pdf).
 
 ## (key) Requirements 
 - Python 3.8
