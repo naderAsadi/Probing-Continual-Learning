@@ -72,6 +72,7 @@ def get_parser():
     parser.add_argument("--smooth", type=int, default=0)
     parser.add_argument("--num_workers", type=int, default=8)
     parser.add_argument("--cuda_id", type=int, default=0)
+    parser.add_argument("--seed", type=int, default=0)
 
     parser.add_argument("--probe_num_samples", type=int, default=-1)
 

@@ -5,13 +5,16 @@ from collections import OrderedDict as OD
 from data.base import *
 from models import SupConResNet, SupCEResNet, MultiHeadResNet
 from methods import *
-from utils import Logger, get_parser
+from utils import Logger, get_parser, set_seed
 from utils import adjust_learning_rate, load_best_args
 
 
 def main():
     # >>>>> Arguments <<<<<
     args = get_parser()
+
+    if args.seed is not None:
+        set_seed(args.seed)
 
     if args.load_best_args:
         load_best_args(args)

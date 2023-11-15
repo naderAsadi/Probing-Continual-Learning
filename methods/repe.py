@@ -118,8 +118,8 @@ class RePE(ER):
 
         log_p = torch.log_softmax(current_out / self.distill_temp, dim=1)  # student
         q = torch.softmax(prev_out / self.distill_temp, dim=1)  # teacher
-        # result = torch.nn.KLDivLoss(reduction="batchmean")(log_p, q)
-        result = torch.sum(-q * log_p, dim=-1).mean()
+        result = torch.nn.KLDivLoss(reduction="batchmean")(log_p, q)
+        # result = torch.sum(-q * log_p, dim=-1).mean()
 
         return result
 
